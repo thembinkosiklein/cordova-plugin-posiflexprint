@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-posiflexprint" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+        xmlns:android="http://schemas.android.com/apk/res/android" 
+        version="1.0.0">
+
+    <name>PosiflexPRINT</name>
+
+    <js-module name="PosiflexPRINT" src="www/PosiflexPRINT.js">
+        <clobbers target="PosiflexPRINT" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="PosiflexPRINT">
+                <param name="android-package" value="cordova.plugin.posiflexprint.PosiflexPRINT" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/PosiflexPRINT.java" target-dir="src/cordova/plugin/posiflexprint/PosiflexPRINT" />
+    </platform>
+</plugin>
