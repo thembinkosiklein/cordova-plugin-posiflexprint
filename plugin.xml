@@ -19,5 +19,6 @@
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml" />
         <source-file src="src/android/PosiflexPRINT.java" target-dir="src/cordova/plugin/posiflexprint/PosiflexPRINT" />
+        <source-file src="src/android/lib/PosiflexExtension.jar" target-dir="libs" />
     </platform>
 </plugin>
