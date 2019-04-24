@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.pos.printer;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,21 +24,9 @@ public class PosiflexPRINT extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("print")) {
-            String message = args.getString(0);
-            this.print(message, callbackContext);
+            PrinterFunctions.PrintSampleReceipt("USB:", 0);
             return true;
         }
         return false;
     }
-
-    private void print(String message, CallbackContext callbackContext) {
-        if (message != null && message.length() > 0) {
-            // PrinterFunctions.PrintSampleReceipt("USB:", 0);
-            PrintSampleReceipt("USB:", 0);
-        } else {
-            callbackContext.error("Expected one non-empty string argument.");
-        }
-    }
-
-    public static native int PrintSampleReceipt(String portName,int portSettings);
 }
