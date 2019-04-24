@@ -23,5 +23,12 @@
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml" />
+
+        <source-file src="src/android/PrinterFunctions.java"
+            target-dir="src/cordova/plugin/posiflexprint" />
+
+        <source-file src="src/android/PrinterFunctionsLAN.java"
+            target-dir="src/cordova/plugin/posiflexprint" />
+
     </platform>
 </plugin>
