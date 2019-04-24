@@ -24,8 +24,7 @@ public class PosiflexPRINT extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("print")) {
-            PrinterFunctions pf = new PrinterFunctions();
-            pf.PrintSampleReceipt("USB:", 0);
+            PrinterFunctions.PrintSampleReceipt("USB:", 0);
             return true;
         }
         return false;
